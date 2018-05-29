@@ -4,8 +4,8 @@ body {
   margin: 0px;
 }
 
-.speakgenius-modal {
-  /* background-color:#F9F9F9; */
+#speakgenius-modal {
+  background-color: white;
   width: 100vw;
   height: 100vh;
   max-height: 150px;
@@ -87,4 +87,25 @@ body {
 
 .size-36 {
   font-size: 36px !important;
+}
+
+#welcome-modal {
+  width: 100vw;
+  height: 100vh;
+  max-height: 150px;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.sg-welcome {
+  /* color: green; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sg-prePost {
+  display: flex;
 }

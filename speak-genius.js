@@ -1,4 +1,36 @@
-const onboardDetails = [
+/*
+TODO:
+ -refactor
+*/
+const preLessonDetails = [
+  { 
+    instructions: 'Check this', 
+    screenShare: null, 
+    suggestedTime: null 
+  },
+  { 
+    instructions: 'Check that', 
+    screenShare: null, 
+    suggestedTime: null 
+  },
+  { 
+    instructions: 'Do this', 
+    screenShare: null, 
+    suggestedTime: null 
+  },
+  { 
+    instructions: 'Do that', 
+    screenShare: null, 
+    suggestedTime: null 
+  },
+  { 
+    instructions: 'Lets all be happy', 
+    screenShare: null, 
+    suggestedTime: null 
+  }
+]
+
+const inLessonDetails = [
   { 
     instructions: 'Ask me anything', 
     screenShare: false, 
@@ -57,18 +89,16 @@ const onboardDetails = [
 ];
 
 let i = 0;
-
+let f = 0;
+let preLessonBool;
 
 // console.log(document.getElementById('sg-instructions'));
 window.onload = function(e) {
-  document.getElementById('sg-instructions').textContent = onboardDetails[0].instructions;
+
+  document.getElementById('sg-preLesson').onclick = preLessonButton;
+  document.getElementById('sg-duringLesson').onclick = inLessonButton;
   
-  document.getElementById('sg-suggestedTimeText').textContent = onboardDetails[i].suggestedTime;
-  if (onboardDetails[i].screenShare) document.getElementById('sg-screenShareText').textContent = 'ON';
-  else document.getElementById('sg-screenShareText').textContent = 'OFF';
-  
-  document.getElementById('left').onclick = leftButtonHandler;
-  document.getElementById('right').onclick = rightButtonHandler;
+  document.getElementById('speakgenius-modal').style.display = 'none';
 
   var menuEl = document.querySelector('#test')
   var menu = new mdc.menu.MDCMenu(menuEl);
@@ -85,38 +115,101 @@ window.onload = function(e) {
      var detail = evt.detail;
   });
 
-
-  console.log(menu);
   // Set Anchor Corner to Bottom End
   menu.setAnchorCorner(0);
-
-  // Turn off menu open animations
-  // menu.quickOpen = true;
-  // menu.setAnchorCorner(Corner.BOTTOM_END);
-  // console.log(menu);
-  // document.getElementById('dropdown-menu').setAnchorCorner(Corner.BOTTOM_END);
-  // console.log(document.getElementById('dropdown-menu').isOpen());
 }
 
-function leftButtonHandler() {
-  let text = document.getElementById('sg-instructions');
-  if (i > 0) {
-    i -= 1;
-    text.textContent = onboardDetails[i].instructions;
-    document.getElementById('sg-suggestedTimeText').textContent = onboardDetails[i].suggestedTime;
-    if (onboardDetails[i].screenShare) document.getElementById('sg-screenShareText').textContent = 'ON';
-    else document.getElementById('sg-screenShareText').textContent = 'OFF';
+function inLesson() {
+  document.getElementById('speakgenius-modal').style.display = 'flex';
+  document.getElementById('welcome-modal').style.display = 'none';
+
+  document.getElementById('sg-screenShare').style.display = 'flex';
+  document.getElementById('sg-suggestedTime').style.display = 'flex';
+  document.getElementById('sg-instructions').textContent = inLessonDetails[i].instructions;
+  
+  document.getElementById('sg-suggestedTimeText').textContent = inLessonDetails[i].suggestedTime;
+  if (inLessonDetails[i].screenShare) {
+    document.getElementById('sg-screenShareText').textContent = 'ON';
+    document.getElementById('sg-screenShareText').style.color = 'green';
+  }
+  else {
+    document.getElementById('sg-screenShareText').textContent = 'OFF';
+    document.getElementById('sg-screenShareText').style.color = 'red';
+  }
+  
+  document.getElementById('left').onclick = function() {
+    i = leftButtonHandler(inLessonDetails, i);
+  };
+  document.getElementById('right').onclick = function() {
+    i = rightButtonHandler(inLessonDetails, i);
   }
 }
 
-function rightButtonHandler() {
-  let text = document.getElementById('sg-instructions');
-  console.log(i, ' length: ', onboardDetails.length);
-  if (i < onboardDetails.length - 1) {
-    i += 1;
-    text.textContent = onboardDetails[i].instructions;
-    document.getElementById('sg-suggestedTimeText').textContent = onboardDetails[i].suggestedTime;
-    if (onboardDetails[i].screenShare) document.getElementById('sg-screenShareText').textContent = 'ON';
-    else document.getElementById('sg-screenShareText').textContent = 'OFF';
+function preLessonButton() {
+  preLesson();
+  preLessonBool = true;
+}
+
+function inLessonButton() {
+  inLesson();
+  preLessonBool = false;
+}
+
+function preLesson() {
+  document.getElementById('welcome-modal').style.display = 'none';
+  document.getElementById('speakgenius-modal').style.display = 'flex';
+
+  document.getElementById('sg-instructions').textContent = preLessonDetails[f].instructions;
+
+  document.getElementById('sg-screenShare').style.display = 'none';
+  document.getElementById('sg-suggestedTime').style.display = 'none';
+
+  document.getElementById('left').onclick = function() {
+    f = leftButtonHandler(preLessonDetails, f);
   }
+
+  document.getElementById('right').onclick = function() {
+    f = rightButtonHandler(preLessonDetails, f);
+  }
+}
+
+function leftButtonHandler(details, index) {
+  let text = document.getElementById('sg-instructions');
+  console.log(index);
+  if (index > 0) {
+    index -= 1;
+    text.textContent = details[index].instructions;
+    document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime;
+    if (details[index].screenShare) {
+      document.getElementById('sg-screenShareText').textContent = 'ON';
+      document.getElementById('sg-screenShareText').style.color = 'green';
+    }
+    else {
+      document.getElementById('sg-screenShareText').textContent = 'OFF';
+      document.getElementById('sg-screenShareText').style.color = 'red';
+    }
+  } else {
+    document.getElementById('speakgenius-modal').style.display = 'none';
+    document.getElementById('welcome-modal').style.display = 'flex';
+  }
+  return index;
+}
+
+function rightButtonHandler(details, index) {
+  let text = document.getElementById('sg-instructions');
+  console.log(index, details.length - 1);
+  if (index < details.length - 1) {
+    index += 1;
+    text.textContent = details[index].instructions;
+    document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime;
+    if (details[index].screenShare) {
+      document.getElementById('sg-screenShareText').textContent = 'ON';
+      document.getElementById('sg-screenShareText').style.color = 'green';
+    }
+    else {
+      document.getElementById('sg-screenShareText').textContent = 'OFF';
+      document.getElementById('sg-screenShareText').style.color = 'red';
+    }
+  }
+  return index;
 }
