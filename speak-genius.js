@@ -184,18 +184,8 @@ function preLesson() {
 
 function leftButtonHandler(details, index) {
   let text = document.getElementById('sg-instructions');
-  
-  text.classList.remove('fadeInLeft');
-  text.classList.remove('fadeInRight');
-  text.classList.add('fadeOutRight');
-
   if (index > 0) {
     index -= 1;
-    window.setTimeout(() => {
-      text.classList.remove('fadeOutRight');
-      text.classList.add('fadeInLeft');
-      text.textContent = details[index].instructions;
-    }, 300);
     text.textContent = details[index].instructions;
     document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime;
     setScreenShare(details, index);
@@ -208,16 +198,9 @@ function leftButtonHandler(details, index) {
 
 function rightButtonHandler(details, index) {
   let text = document.getElementById('sg-instructions');
-  text.classList.remove('fadeInLeft');
-  text.classList.remove('fadeInRight');
-  text.classList.add('fadeOutLeft');
   if (index < details.length - 1) {
     index += 1;
-    window.setTimeout(() => {
-      text.classList.remove('fadeOutLeft');
-      text.classList.add('fadeInRight');
-      text.textContent = details[index].instructions;
-    }, 300);
+    text.textContent = details[index].instructions;
     document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime;
     setScreenShare(details, index);
   }
