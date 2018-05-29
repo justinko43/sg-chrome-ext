@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link href="speak-genius.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="material-min.css" type="text/css">
+  <script type="text/javascript" src="material-js.min.js"></script>
+  <script type="text/javascript" src="speak-genius.js"></script>
+</head>
+
+<body>
+  <div class="speakgenius-modal">
+    <div class="sg-top">
+      <div class="sg-topLeft">
+        <div id="sg-screenShare">SCREEN SHARE:
+          <b id="sg-screenShareText"></b>
+        </div>
+        <div id="sg-suggestedTime">SUGGESTED TIME:
+          <b id="sg-suggestedTimeText"></b>
+        </div>
+      </div>
+      <div class="sg-leftButton center">
+        <button id="left" class="mdc-button">
+          <i class="material-icons size-36">
+            skip_previous
+          </i>
+        </button>
+        <!-- <i id="left" class="material-icons">
+          skip_previous
+        </i> -->
+      </div>
+      <div class="sg-rightButton center">
+        <button id="right" class="mdc-button">
+          <i class="material-icons size-36">
+            skip_next
+          </i>
+        </button>
+
+      </div>
+      <div class="sg-troubleshoot icon">
+        <div id="demo-menu" class="mdc-menu-anchor">
+          <button id="menu-button" class="foo-button mdc-button">
+            <i class="material-icons">report</i>
+          </button>
+          <div id="test" class="mdc-menu">
+            <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+              <li class="mdc-list-item" role="menuitem" tabindex="0">
+                Cancellation policy
+              </li>
+              <li class="mdc-list-item" role="menuitem" tabindex="0">
+                Network issues
+              </li>
+              <li class="mdc-list-item" role="menuitem" tabindex="0">
+                Learner not present
+              </li>
+              <li class="mdc-list-item" role="menuitem" tabindex="0">
+                Moderator keys to sucess
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sg-instructions" class="sg-bottom center"></div>
+  </div>
+</body>
+
+</html>
