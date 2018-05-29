@@ -5,7 +5,7 @@ body {
 }
 
 .speakgenius-modal {
-  background-color:#F9F9F9;
+  /* background-color:#F9F9F9; */
   width: 100vw;
   height: 100vh;
   max-height: 150px;

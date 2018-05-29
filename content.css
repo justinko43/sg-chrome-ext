@@ -1,10 +1,14 @@
 #speakgenius-iframe {
-  background-color:#F9F9F9;
+  /* background-color:#F9F9F9; */
   width: 92vw;
   max-height: 200px;
-  border-color: #7D7E7F;
+  /* border-color: #7D7E7F; */
   border-radius: 7px;
   box-shadow: 0px 0px 7px #7D7E7F;
+  border-top: black;
+  border-color: white;
+  border-left: black;
+
   position: fixed;
   bottom: 5px;
   left: 50%;
