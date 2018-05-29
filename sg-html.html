@@ -8,13 +8,27 @@
   <title>Document</title>
   <link href="speak-genius.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
   <link rel="stylesheet" href="material-min.css" type="text/css">
   <script type="text/javascript" src="material-js.min.js"></script>
   <script type="text/javascript" src="speak-genius.js"></script>
 </head>
 
 <body>
-  <div class="speakgenius-modal">
+  <div id="welcome-modal">
+    <div class="sg-welcome">
+      <h1>WELCOME TO SPEAKGENIUS</h1>
+    </div>
+    <div class="sg-prePost center">
+      <button id="sg-preLesson" class="mdc-button">
+        PRELESSON
+      </button>
+      <button id="sg-duringLesson" class="mdc-button">
+        DURING LESSON
+      </button>
+    </div>
+  </div>
+  <div id="speakgenius-modal" class="speakgenius-modal">
     <div class="sg-top">
       <div class="sg-topLeft">
         <div id="sg-screenShare">SCREEN SHARE:
@@ -30,9 +44,6 @@
             skip_previous
           </i>
         </button>
-        <!-- <i id="left" class="material-icons">
-          skip_previous
-        </i> -->
       </div>
       <div class="sg-rightButton center">
         <button id="right" class="mdc-button">
@@ -66,7 +77,7 @@
         </div>
       </div>
     </div>
-    <div id="sg-instructions" class="sg-bottom center"></div>
+    <div id="sg-instructions" class="sg-bottom center animated fadeInRight"></div>
   </div>
 </body>
 
