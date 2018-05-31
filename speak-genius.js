@@ -28,8 +28,8 @@ const preLessonDetails = [
     suggestedTime: null 
   },
   { 
-    instructions: 'Lets all be happy', 
-    subjectMatter: 'Hello',
+    instructions: 'Click next to go in lesson!', 
+    subjectMatter: 'End',
     screenShare: null, 
     suggestedTime: null 
   }
@@ -110,22 +110,15 @@ let preLessonBool;
 
 // console.log(document.getElementById('sg-instructions'));
 window.onload = function(e) {
-
-  
-
   document.getElementById('sg-preLesson').onclick = preLessonButton;
   document.getElementById('sg-duringLesson').onclick = inLessonButton;
-  
   document.getElementById('speakgenius-modal').style.display = 'none';
-
 
   const menuEl = document.querySelector('#sg-troubleshootMenu')
   const menu = new mdc.menu.MDCMenu(menuEl);
   const menuButtonEl = document.querySelector('#menu-button');
 
   document.querySelector('#sggg').addEventListener('click', function(ev) {
-    // ev.stopPropagation();
-    // console.log('hello1');
     let openMenu = document.getElementById('sg-troubleshootMenu');
     if (!openMenu.classList.contains('sg-opener')) {
       openMenu.classList.add('sg-opener')
@@ -166,8 +159,6 @@ window.onload = function(e) {
     menu.open = !menu.open;
     document.getElementById('scrim').style.display = 'block';
   });
-
-
 
   // Listen for selected item
   menuEl.addEventListener('MDCMenu:selected', function(evt) {
@@ -265,6 +256,11 @@ function rightButtonHandler(details, index) {
     document.getElementById('sg-category').textContent = details[index].subjectMatter;    
     document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime + ' min';
     setScreenShare(details, index);
+  } else {
+    if (preLessonBool) {
+      inLesson();
+      preLessonBool = false;
+    }
   }
   return index;
 }
