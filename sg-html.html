@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="speak-genius.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="material-min.css" type="text/css">
   <script type="text/javascript" src="material-js.min.js"></script>
@@ -14,51 +15,65 @@
 </head>
 
 <body>
+  <div id="scrim">
+  </div>
   <div id="welcome-modal">
+    <div class="watermark">
+      Speak Genius
+    </div>
     <div class="sg-welcome">
-      <h1>WELCOME TO SPEAKGENIUS</h1>
+      Moderator Guides
     </div>
     <div class="sg-prePost center">
-      <button id="sg-preLesson" class="mdc-button">
-        PRELESSON
+      <button id="sg-preLesson" class="welcome-button mdc-button">
+        Pre-Lesson
       </button>
-      <button id="sg-duringLesson" class="mdc-button">
-        DURING LESSON
+      <button id="sg-duringLesson" class="welcome-button mdc-button">
+        In-Lesson
       </button>
     </div>
   </div>
   <div id="speakgenius-modal" class="speakgenius-modal" style="display:none">
     <div class="sg-top">
       <div class="sg-topLeft">
-        <div id="sg-screenShare">SCREEN SHARE:
-          <b id="sg-screenShareText"></b>
-        </div>
-        <div id="sg-suggestedTime">SUGGESTED TIME:
+        <div id="sg-suggestedTime">
+          <i class="material-icons">timer</i>
           <b id="sg-suggestedTimeText"></b>
         </div>
+        <div id="sg-screenShare">
+          <i class="material-icons">screen_share</i>
+          <b id="sg-screenShareText"></b>
+        </div>
       </div>
-      <div class="sg-leftButton center">
-        <button id="left" class="mdc-button">
-          <i class="material-icons size-36">
+      <div class="sg-leftButton">
+        <button id="left" class="move-button mdc-button">
+          <i class="material-icons size-30">
             skip_previous
           </i>
         </button>
       </div>
-      <div class="sg-rightButton center">
-        <button id="right" class="mdc-button">
-          <i class="material-icons size-36">
+      <div class="sg-rightButton">
+        <button id="right" class="move-button mdc-button">
+          <i class="material-icons size-30">
             skip_next
           </i>
-        </button>
+        </button> 
 
       </div>
       <div class="sg-troubleshoot icon">
         <div id="demo-menu" class="mdc-menu-anchor">
-          <button id="menu-button" class="foo-button mdc-button">
-            <i class="material-icons">report</i>
-          </button>
+          <div id="menu-button" class="">
+            <i class="material-icons size-24">report</i>
+          </div>
           <div id="sg-troubleshootMenu" class="mdc-menu">
-            <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="true">
+            <div id="sggg" class="sg-help">
+              <div class="test2">SG Help</div>
+              <div id="sg-closeWrapper" class="sg-closeWrapper">x</div>
+            </div>
+            <ul class="mdc-menu__items mdc-list" role="menu" aria-hidden="false">
+              <li class="display-none mdc-list-item" role="menuitem" tabindex="0">
+                  Cancellation policy
+              </li>
               <li class="mdc-list-item" role="menuitem" tabindex="0">
                 Cancellation policy
               </li>
@@ -69,14 +84,17 @@
                 Learner not present
               </li>
               <li class="mdc-list-item" role="menuitem" tabindex="0">
-                Moderator keys to sucess
+                Moderator keys to success
               </li>
             </ul>
           </div>
         </div>
       </div>
     </div>
-    <div id="sg-instructions" class="sg-bottom center"></div>
+    <div class="sg-bottom center">
+      <div id="sg-category" ></div>
+      <div id="sg-instructions" ></div>
+    </div>
   </div>
 </body>
 

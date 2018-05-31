@@ -1,14 +1,30 @@
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
+  padding-top: 5px;
+  font-family: 'Nunito Sans', sans-serif;
+  color: #9ea0a6;
   margin: 0px;
+  /* border-radius: 7px; */
+  /* box-shadow: 0px 0px 7px #7D7E7F;   */
+}
+
+.watermark {
+  padding-top: 5px;
+  padding-left: 20px;
+  font-size: 15px;
+  height: 30px;
+  font-size: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 #speakgenius-modal {
   background-color: white;
+  /* padding-left: 2.5vw; */
   width: 100vw;
   height: 100vh;
-  max-height: 150px;
+  max-height: 190px;
   overflow-y: scroll;
   display: flex;
   flex-wrap: wrap;
@@ -21,11 +37,16 @@ body {
 }
 
 #sg-screenShare {
+  line-height: 1.9;
+  font-size: 14px;
   width: 100%
 }
 
 #sg-suggestedTime {
   width: 100%;
+  line-height: 1.9;
+  font-size: 14px;
+
 }
 
 .sg-top {
@@ -37,15 +58,19 @@ body {
 
 .sg-bottom {
   width: 100%;
-  height: 60px;
-  padding: 10px;
+  height: 105px;
+  padding-bottom: 10px;
+  /* padding-top: 5px; */
   font-size: 30px;
   display: flex;
+  flex-flow: nowrap column;
   text-align: center;
 }
 
 .sg-topLeft {
-  min-width: 180px;
+  padding-top: 10px;
+  padding-left:15px;
+  /* min-width: 180px; */
   display: flex;
   width: 25%;
   justify-content: flex-start;
@@ -54,16 +79,38 @@ body {
 }
 
 .sg-leftButton {
+  justify-content: flex-end;
+  align-items: center;
   display: flex;
   width: 25%;
+  padding-right: 33.5px;
 }
 
 .sg-rightButton {
+  padding-left: 33.5px;
+  justify-content: flex-start;
+  align-items: center;
   display: flex;
   width: 25%;
 }
 
+#right {
+  --mdc-theme-primary: #BBBDC1;  
+  color: #598be9 !important;
+}
+
+#left {
+  --mdc-theme-primary: #BBBDC1;
+  color: #BBBDC1 !important;  
+}
+
+#menu-button {
+  color: #BBBDC1 !important;
+  cursor: pointer;
+}
+
 .sg-troubleshoot {
+  padding-right: 15px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -85,8 +132,8 @@ body {
   font-size: 14px !important;
 }
 
-.size-36 {
-  font-size: 36px !important;
+.size-30 {
+  font-size: 30px !important;
 }
 
 #welcome-modal {
@@ -99,13 +146,127 @@ body {
   justify-content: center;
 }
 .sg-welcome {
-  /* color: green; */
+  margin-top: 15px;
+  font-size: 20px;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* margin-bottom: 5px; */
 }
 
 .sg-prePost {
   display: flex;
+}
+
+.welcome-button {
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-size: 13px !important;
+  height: 30px !important;
+  border-radius: 20px !important;
+  background-color: #fafafa;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+  text-transform: inherit !important;
+}
+
+#sg-preLesson {
+  --mdc-theme-primary: #BBBDC1;
+  width: 93px !important;
+  margin-right: 27px;
+  color: #8a8c90 !important;
+}
+
+#sg-duringLesson {
+  --mdc-theme-primary: #BBBDC1;
+  width: 93px !important;
+  color: #598be9;
+}
+
+#sg-suggestedTimeText {
+  padding-left: 8px;
+  /* vertical-align: middle;
+   */
+}
+
+#sg-screenShareText {
+  padding-left: 8px;
+  /* vertical-align: middle;
+   */
+}
+
+#sg-instructions {
+  /* margin-top: -20px; */
+  width: 100%;
+  font-size: 20px;
+}
+
+#sg-category {
+  width: 100%;
+  font-size: 20px;
+  color: #598be9;
+}
+
+.size-24 {
+  font-size: 24px;
+}
+
+.move-button {
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-size: 13px !important;
+  border-radius: 20px !important;
+  width: 50px !important;
+  min-width: 50px !important;
+  height: 30px !important;
+  background-color: white;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+}
+.sg-closeWrapper {
+  /* float: right; */
+  height: 30px;
+  line-height: 30px;
+  cursor: pointer;
+  margin-left: 44px;
+}
+
+.sg-help {
+  font-size: 16px;
+  padding-top: 5px;
+  display: flex;
+  margin-left: 35%;
+  height: 30px;
+  line-height: 30px;
+}
+
+#sg-troubleshootMenu {
+  border-radius: 17px !important;
+}
+
+.mdc-list-item {
+  font-family: 'Nunito Sans', sans-serif !important;
+  font-size: 14px !important;
+}
+
+.display-none {
+  display: none !important;
+}
+
+.sg-opener {
+  display: inline-block !important;
+  -webkit-transform: scale(1);
+  transform: scale(1) !important;
+  opacity: 1 !important;
+}
+
+#scrim {
+  position: fixed;
+  top: 0; 
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 101vw;
+  height: 100vh;
+  z-index: 2;
+  display: none;
+  background-color:#BBBDC1;
+  opacity: .3;
 }
