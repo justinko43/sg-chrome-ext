@@ -270,3 +270,19 @@ body {
   background-color:#BBBDC1;
   opacity: .3;
 }
+
+.docs {
+  /* padding-left: 10px; */
+  padding-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 100%;
+  font-size: 12px;
+}
+#sg-documentation {
+  color: #598be9;
+}
+#sg-documentation:active {
+  color: #598be9;
+}
