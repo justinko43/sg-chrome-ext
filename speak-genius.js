@@ -4,34 +4,39 @@ TODO:
 */
 const preLessonDetails = [
   { 
-    instructions: 'Check this', 
+    instructions: 'Organize your lesson windows', 
     subjectMatter: 'Hello',
     screenShare: null, 
-    suggestedTime: null 
+    suggestedTime: null,
+    link: 'https://bit.ly/2JowRNX',
   },
   { 
-    instructions: 'Check that', 
+    instructions: 'Use SG’s dedicated Meet account to join your lesson', 
     subjectMatter: 'Hello',
     screenShare: null, 
-    suggestedTime: null 
+    suggestedTime: null,
+    link: 'https://bit.ly/2LbZPh6',
   },
   { 
-    instructions: 'Do this', 
+    instructions: 'Optimize your network connection settings', 
     subjectMatter: 'Hello',
     screenShare: null, 
-    suggestedTime: null 
+    suggestedTime: null,
+    link: 'https://bit.ly/2Lb3viZ',
   },
   { 
-    instructions: 'Do that', 
+    instructions: 'Keys to moderating a good lesson', 
     subjectMatter: 'Hello',
     screenShare: null, 
-    suggestedTime: null 
+    suggestedTime: null,
+    link: 'https://bit.ly/2JjXxPO',
   },
   { 
-    instructions: 'Click next to go in lesson!', 
+    instructions: 'You’re all set! Click “Join Meeting” in Google Meet and Click the Next Arrow above =D', 
     subjectMatter: 'End',
     screenShare: null, 
-    suggestedTime: null 
+    suggestedTime: null,
+    link: 'https://www.google.com/',
   }
 ]
 
@@ -40,67 +45,78 @@ const inLessonDetails = [
     instructions: 'Ask me anything', 
     subjectMatter: 'Hello',
     screenShare: false, 
-    suggestedTime: 5 
+    suggestedTime: 5 ,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Introduce the topic', 
     subjectMatter: 'Hello',
     screenShare: true, 
-    suggestedTime: 15
+    suggestedTime: 15,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Have learner read the briefing', 
     subjectMatter: 'Hello',
     screenShare: true, 
-    suggestedTime: 15
+    suggestedTime: 15,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Underline and go over mispronouned words', 
     subjectMatter: 'Hello',
     screenShare: true, 
-    suggestedTime: 15
+    suggestedTime: 15,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Ask the lead-in question and unpack if necessary', 
     subjectMatter: 'Hello',
     screenShare: true, 
-    suggestedTime: 15
+    suggestedTime: 15,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Go through lead-in inquiry', 
     subjectMatter: 'Hello',
     screenShare: false, 
-    suggestedTime: 15
+    suggestedTime: 15,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Don\'t forget to write down constructive feedback!', 
     subjectMatter: 'Hello',
     screenShare: false, 
-    suggestedTime: 15
+    suggestedTime: 15,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Go over constructive feedback', 
     subjectMatter: 'Hello',
     screenShare: true, 
-    suggestedTime: 15
+    suggestedTime: 15,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Introduce key phrase', 
     subjectMatter: 'Hello',
     screenShare: true, 
-    suggestedTime: 10
+    suggestedTime: 10,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'Go through key phrase inquiry', 
     subjectMatter: 'Hello',
     screenShare: false, 
-    suggestedTime: 10
+    suggestedTime: 10,
+    link: 'https://www.google.com/',
   },
   { 
     instructions: 'End the lesson', 
     subjectMatter: 'Hello',
     screenShare: false, 
-    suggestedTime: 0
+    suggestedTime: 0,
+    link: 'https://www.google.com/',
   }
 ];
 
@@ -174,11 +190,13 @@ function inLesson() {
   document.getElementById('speakgenius-modal').style.display = 'flex';
   document.getElementById('welcome-modal').style.display = 'none';
   document.getElementById('demo-menu').style.display = 'block';
+  document.getElementById('sg-category').style.display = 'block';
   //display screenshare and suggested time
   document.getElementById('sg-screenShare').style.display = 'flex';
   document.getElementById('sg-suggestedTime').style.display = 'flex';
   document.getElementById('sg-instructions').textContent = inLessonDetails[i].instructions;
   document.getElementById('sg-category').textContent = inLessonDetails[i].subjectMatter;
+  document.getElementById('sg-documentation').href = inLessonDetails[i].link;
 
   setScreenShare(inLessonDetails, i);
   
@@ -217,9 +235,11 @@ function preLesson() {
   document.getElementById('welcome-modal').style.display = 'none';
   document.getElementById('speakgenius-modal').style.display = 'flex';
   document.getElementById('demo-menu').style.display = 'none';
+  document.getElementById('sg-category').style.display = 'none';
 
   document.getElementById('sg-category').textContent = preLessonDetails[f].subjectMatter;
   document.getElementById('sg-instructions').textContent = preLessonDetails[f].instructions;
+  document.getElementById('sg-documentation').href = preLessonDetails[f].link;
 
   document.getElementById('sg-screenShare').style.display = 'none';
   document.getElementById('sg-suggestedTime').style.display = 'none';
@@ -237,8 +257,9 @@ function leftButtonHandler(details, index) {
   let text = document.getElementById('sg-instructions');
   if (index > 0) {
     index -= 1;
-    document.getElementById('sg-category').textContent = details[index].subjectMatter;
+    if (!preLessonBool) document.getElementById('sg-category').textContent = details[index].subjectMatter;
     text.textContent = details[index].instructions;
+    document.getElementById('sg-documentation').href = details[index].link;
     document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime + ' min';
     setScreenShare(details, index);
   } else {
@@ -252,8 +273,9 @@ function rightButtonHandler(details, index) {
   let text = document.getElementById('sg-instructions');
   if (index < details.length - 1) {
     index += 1;
+    if (!preLessonBool) document.getElementById('sg-category').textContent = details[index].subjectMatter;    
     text.textContent = details[index].instructions;
-    document.getElementById('sg-category').textContent = details[index].subjectMatter;    
+    document.getElementById('sg-documentation').href = details[index].link;
     document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime + ' min';
     setScreenShare(details, index);
   } else {
