@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link href="speak-genius.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,200i" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="material-min.css" type="text/css">
   <script type="text/javascript" src="material-js.min.js"></script>
@@ -61,21 +61,23 @@
           <b id="sg-screenShareText"></b>
         </div>
       </div>
-      <div class="sg-leftButton">
+      <!-- <div class="sg-leftButton">
         <button id="left" class="move-button mdc-button">
           <i class="material-icons size-30">
             skip_previous
           </i>
         </button>
+      </div> -->
+      <div id="sg-categoryContainer">
+        <div id="sg-category" class="center" ></div>
       </div>
-      <div class="sg-rightButton">
+      <!-- <div class="sg-rightButton">
         <button id="right" class="move-button mdc-button">
           <i class="material-icons size-30">
             skip_next
           </i>
         </button> 
-
-      </div>
+      </div> -->
       <div class="sg-troubleshoot icon">
         <div id="demo-menu" class="mdc-menu-anchor">
           <div id="menu-button" class="">
@@ -108,8 +110,23 @@
       </div>
     </div>
     <div class="sg-bottom center">
-      <div id="sg-category" ></div>
-      <div id="sg-instructions" ></div>
+      <!-- <div id="sg-category" ></div> -->
+      <div id="sg-instructions1" class="sg-instruction center" ></div>
+      <div id="sg-instructions2" class="sg-instruction center"></div>
+      <div id="sg-instructions3" class="sg-instruction center"></div>
+      <div id="sg-instructions4" class="sg-instruction center"></div>
+    </div>
+    <div class="buttons">
+      <button id="left" class="move-button mdc-button">
+        <i class="material-icons size-30">
+          skip_previous
+        </i>
+      </button>
+      <button id="right" class="move-button mdc-button">
+        <i class="material-icons size-30">
+          skip_next
+        </i>
+      </button> 
     </div>
     <div class="docs">
       <a id="sg-documentation" target="_blank" href="">DOCUMENTATION</a>
