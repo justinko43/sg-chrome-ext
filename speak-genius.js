@@ -5,24 +5,28 @@ TODO:
 const preLessonDetails = [
   { 
     instructions1: 'Organize your lesson windows',
+    instructions2: [{word:' '}],
     screenShare: null, 
     suggestedTime: null,
     link: 'https://bit.ly/2JowRNX',
   },
   { 
-    instructions1: 'Use SG’s dedicated Meet account to join your lesson',
+    instructions1: 'Use SG’s dedicated Google account to join your lesson',
+    instructions2: [{word:' '}],
     screenShare: null, 
     suggestedTime: null,
     link: 'https://bit.ly/2LbZPh6',
   },
   { 
-    instructions1: 'Optimize your Meet connection settings',
+    instructions1: 'Optimize your network connection settings',
+    instructions2: [{word:' '}],
     screenShare: null, 
     suggestedTime: null,
     link: 'https://bit.ly/2Lb3viZ',
   },
   { 
     instructions1: 'Keys to moderating a good lesson',
+    instructions2: [{word:' '}],
     screenShare: null, 
     suggestedTime: null,
     link: 'https://bit.ly/2JjXxPO',
@@ -30,8 +34,9 @@ const preLessonDetails = [
   { 
     instructions1: [{ word:'You\'re all set!', color: '#598be9' }],
     instructions2: [{word:' '}],
-    instructions3: ['I. ', { word:'Click', color: 'orange' }, '“Join Meeting” in Meet'],
-    instructions4: ['II. ', { word:'Click', color: 'orange' }, 'the Next Arrow below'],
+    instructions3: ['I.', { word:'Click', color: 'orange' }, '“Join Meeting” in Meet'],
+    instructions4: ['II.',{ word:'Click', color: 'orange' }, 'the Next Arrow below'],
+    instructions5: [ {word:'(', noSpace: true}, {word:'please', underline: true}, 'use headphones)'],
     screenShare: null, 
     suggestedTime: null,
   }
@@ -39,127 +44,155 @@ const preLessonDetails = [
 
 const inLessonDetails = [
   { 
-    instructions1: '- Begin Recording: “Settings”, “Record Meeting”',
-    instructions2: ['- If you\'ve never met before, briefly', { word: 'introduce', underline: true}, 'your background and', {word:'ask', underline:true}, 'learner to do the same'],
+    instructions1: [{word: 'Begin Recording:', color:'orange'}, '"Settings", "Record Meeting"'],
+    instructions2: ['I. If you\'ve never met before,', { word: 'briefly introduce', underline: true}, 'your background'],
+    instructions3: [{word:'and ask', underline:true}, 'your learner to do the same'],
     subjectMatter: 'Learner Joins',
     screenShare: false, 
-    suggestedTime: '<1' ,
+    suggestedTime: '< 1' ,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Warm-up by casually exchanging questions',
-    instructions2: [{word:'Answer', underline: true}, 'your own questions', {word: 'following', underline:true}, 'your learner\'s responses'],
-    instructions3: ['eg. "Did you do anything interesting today?",', {word: '"Do you have any questions for me?"', underline: true}, '"What did you think about the pre-lesson video?"'],
+    instructions1: ['I. AMA is an open-ended', {word:'warm-up', underline:true}, 'to kick off the lesson'],
+    instructions2: ['II. If your learner is not asking questions,', {word:'answer', underline:true}, 'your own questions',],
+    instructions3: [{word:'following', underline:true}, 'your learner\'s response'],
+    instructions4: [{word: '"Did you do anything interesting today?", "', color: '#6aa84f', noSpace:true}, {word:'Do you have any questions', color:'#6aa84f', underline: true, noSpace:true}],
+    instructions5: [{word:'for me', underline:true, color: '#6aa84f', noSpace: true}, {word:'?", "What did you think about the pre-lesson video?"', color:'#6aa84f'} ],
     subjectMatter: 'Ask Me Anything',
     screenShare: false, 
-    suggestedTime: '<15',
+    suggestedTime: '< 5',
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Throw in a brief comment that you’re transitioning',
-    instructions2: 'eg. “Okay cool, you did a great job with Ask Me Anything - are you ready to move onto the Lesson Topic?”',
+    instructions1: ['I. Mention that you\'re', {word:'moving on', underline:true}],
+    instructions2: [{word: '"Okay cool, you did a', color: '#6aa84f'}, {word:'great job', underline:true, color:'#6aa84f'}, {word:'with Ask Me Anything.', color: '#6aa84f'}],
+    instructions3: [{word: 'Are you ready', color:'#6aa84f', underline:true},{word:'to move onto today\'s Lesson Topic?"', color: '#6aa84f'}],
     subjectMatter: 'Section Transition',
     screenShare: false, 
     suggestedTime: 1,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: ['Be a conversational guide,', {word:'not a language teacher', underline:true}],
-    instructions2: ['Approach your learner as', {word: 'a friend who speaks native English', underline: true}],
-    instructions3: [{word: 'Aim to spend zero time', underline: true}, 'explaining English grammar / technicalities'],
+    instructions1: ['I. Be a',{word: 'conversational guide', underline: true, noSpace: true}, ',', {word:'not', underline:true}, 'a language teacher'],
+    instructions2: ['II. Approach your learner', {word: 'as a friend', underline: true}, 'who speaks native English'],
+    instructions3: '(ie. be yourself and have fun!)',
+    instructions4: ['III. Spend', {word: 'zero time', underline: true}, 'explaining English grammar / technicalities'],
+    instructions5: ['IV. Learner and mod should be speaking', {word:'60:40', underline: true}],
     subjectMatter: 'Friendly Reminders',
     screenShare: true, 
     suggestedTime: 15,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Screen Share ON: “Present Now”, “A Window”',
-    instructions2: 'Simply paraphrase the Context in your own words ',
-    instructions3: 'eg. “Today’s lesson is about [ Topic ] - we’ll be thinking about questions like, [ Context Questions ]. Ready to get started?”',
+    instructions1: [{word: 'Screen Share ON:', color:'orange'}, '"Present Now", "A Window"'],
+    instructions2: ['I. Simply', {word: 'paraphrase the Context', underline: true}, 'in your own words'],
+    instructions3: [{word:'“Ok, today we\'ll be talking about [', color:'#6aa84f'}, {word: 'read', color:'#6aa84f', underline: true, italics: true}, {word: 'Topic', color:'#6aa84f', italics: true}, {word: '].', color:'#6aa84f'}],
+    instructions4: [{word:'“We\'ll be thinking about questions like, [', color:'#6aa84f'}, {word: 'read', color:'#6aa84f', underline: true, italics: true}, {word: 'Context questions', color:'#6aa84f', italics: true}, {word: '].', color:'#6aa84f'}],
+    instructions5: [{word:'Ready to get started', color: '#6aa84f', underline: true, noSpace: true}, {word: '?"', color: '#6aa84f'}],
     subjectMatter: 'Introduce the Topic',
     screenShare: true, 
-    suggestedTime: '<1 min',
+    suggestedTime: '< 1',
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Ask learner to read Briefing out loud',
-    instructions2: 'Underline any mis-pronounced words in real-time',
+    instructions1: ['I.', {word:'Learner reads Briefing', underline: true}, 'out loud'],
+    instructions2: ['II.',{word:'Underline', underline: true}, 'mis-pronounced words', {word:'in real-time', underline: true}],
+    instructions3: [{word: '(', noSpace:true}, {word:'hide your cursor', underline: true}, 'unless underlining)'],
+    instructions4: [{word: '"Okay, let\'s start by reviewing the Briefing for today\'s topic', color:'#6aa84f'}],
+    instructions5: [{word: 'Can you go ahead and', color:'#6aa84f'}, {word: 'read it for me', color:'#6aa84f', underline: true, noSpace: true}, {word: '?"', color:'#6aa84f'}],
     subjectMatter: 'Learner Reads Briefing',
     screenShare: true, 
     suggestedTime: 2,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Ask learner to repeat mis-pronounced words after you (2-3x per word)',
-    instructions2: 'Ask learner if they have any questions about the Briefing',
-    instructions3: 'eg. “Great job on reading the Briefing. We’re going to quickly review words you could have pronounced better…[ review words ]...did you have any questions before we move on?”',
+    instructions1: ['I.', {word:'Learner repeats', underline: true}, 'underlined words after you (2-3x per word)'],
+    instructions2: ['II. Address', {word:'learner\'s questions', underline: true}, 'on Briefing\'s contents'],
+    instructions3: [{word: '"', color:'#6aa84f', noSpace: true}, {word: 'Great job', color:'#6aa84f', underline: true}, {word: 'on reading the Briefing.', color:'#6aa84f'}],
+    instructions4: [{word: 'Let\'s review a few words you had trouble with...[', color:'#6aa84f'}, {word: 'review', color:'#6aa84f', underline: true, italics: true}, {word: 'words', color:'#6aa84f', italics:true}, {word: ']...', color:'#6aa84f'}],
+    instructions5: [{word: 'Do you have', color:'#6aa84f'}, {word: 'any questions', color:'#6aa84f', underline: true}, {word: 'on the Briefing?"', color:'#6aa84f'}],
     subjectMatter: 'Review Briefing',
     screenShare: true, 
     suggestedTime: 2,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Read Lead-In and ask learner what he/she thinks',
-    instructions2: 'If learner doesn’t understand, use your judgement to unpack / review',
-    instructions3: 'eg. “Okay, so the Lead-In for today is [ Lead-In ]. If you understand the Lead-In, it’d be great to hear your thoughts.”',
-    instructions4: 'Screen Share OFF: “Stop Presenting”',
+    instructions1: ['I.', {word:'Read', underline: true}, 'Lead-In and', {word:'pause', underline: true}, 'for learner to absorb'],
+    instructions2: [{word:'Screen Share OFF:', color:'orange'}, '"Stop Presenting"'],
+    instructions3: ['II.', {word:'Learner responds', underline: true}, 'to Lead-in'],
+    instructions4: [{word: '"Okay, the Lead-in for today is a [ Question / Hypothetical / Opinion ],', color:'#6aa84f'}],
+    instructions5: [{word:'which is, [', color:'#6aa84f'}, {word: 'read', color:'#6aa84f', underline: true, italics: true}, {word: 'Lead-in', color:'#6aa84f', italics: true}, '].'],
+    instructions6: [{word: 'When you\'re ready', color:'#6aa84f', underline: true}, {word: 'to respond, it\'d be great to hear', color:'#6aa84f'}, {word: 'what you think.', color:'#6aa84f', underline: true, noSpace: true}, {word:'"', color:'#6aa84f'}],
     subjectMatter: 'Lead-In',
     screenShare: true, 
     suggestedTime: 2,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Step 1: use SG’s pre-set questions to guide your discussion ',
-    instructions2: 'Step 2: paraphrase learner’s response and (if relevant) follow up with your own brief commentary ',
-    instructions3: 'Step 3: dig deeper with your own follow up questions (eg. “Why?”) ',
-    instructions4: 'eg. “Interesting, so what you’re saying is [ key takeaway ]...[ follow up commentary ]...[ follow up question ]...[ SG’s pre-set question ]”',
+    instructions1: ['I.', {word:'Use pre-set questions', underline: true}, 'to guide your discussion (in order)'],
+    instructions2: ['II.', {word:'Paraphrase', underline: true}, 'your learner\'s key takeaways'],
+    instructions3: ['III.', {word:'Contribute', underline: true}, 'your own opinion / link to U.S. culture'],
+    instructions4: ['IV.', {word:'Dig deeper', underline: true}, 'with follow ups (eg. "Why?")'],
+    instructions5: [{word:'"Interesting, so what you\'re saying is [', color:'#6aa84f'}, {word: 'paraphrase', color:'#6aa84f', underline: true, italics: true}, {word: 'key takeaways', color:'#6aa84f', italics: true}, {word:']...', color:'#6aa84f'}],
+    instructions6: [{word:'[', color: '#6aa84f'}, {word: 'contribute', color:'#6aa84f', underline: true, italics: true}, {word:']...', color: '#6aa84f', noSpace: true}, {word:'[', color: '#6aa84f'}, {word: 'dig deeper', color:'#6aa84f', underline: true, italics: true},{word:']...[', color: '#6aa84f'}, {word: 'use', color:'#e06666', underline: true, italics: true}, {word: 'pre-set question', color:'#e06666', italics: true}, {word:']"', color: '#6aa84f'}],
     subjectMatter: 'Inquiry',
     screenShare: false, 
-    suggestedTime: '<10',
+    suggestedTime: '< 10',
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Screen Share ON',
-    instructions2: 'Briefly read all written Constructive Feedback',
-    instructions3: 'Ask your learner if he/she has any questions on your statements',
-    instructions4: 'eg. “Before we move on, I’d just like to quickly review a few statements I corrected while you were speaking…[ Simply Read Statements ]”',
+    instructions1: [{word: 'Screen Share ON', color:'orange'}],
+    instructions2: ['I.', {word:'Simply read', underline: true}, 'your Constructive Feedback'],
+    instructions3: ['II. Address', {word:'learner\'s questions', underline: true}, 'on Constructive Feedback'],
+    instructions4: [{word: '"Great job', color:'#6aa84f', underline: true}, {word: 'with inquiry.', color:'#6aa84f'}],
+    instructions5: [{word:'Let\'s', color:'#6aa84f'}, {word: 'review', color:'#6aa84f', underline: true}, {word: 'a few statements I corrected for you...[', color:'#6aa84f'},{word: 'read', color:'#6aa84f', underline: true, italics: true},{word: 'statements', color:'#6aa84f', italics: true},{word:']...', color:'#6aa84f'}],
+    instructions6: [{word:'Do you have', color:'#6aa84f'}, {word: 'any questions', color:'#6aa84f', underline: true}, {word: 'on these statements?"', color:'#6aa84f'}],
     subjectMatter: 'Review Constructive Feedback',
     screenShare: true, 
     suggestedTime: 1,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'eg. “If you’re ready, let’s move onto today’s Key Phrase?”',
+    instructions1: ['I. Mention that you\'re', {word:'moving on', underline: true}],
+    instructions2: [{word: '"Okay cool,', color:'#6aa84f'}, {word: 'if you\'re ready', color:'#6aa84f', underline: true}, {word: 'let\'s move onto today\'s Key Phrase."', color:'#6aa84f'}],
     subjectMatter: 'Section Transition',
     screenShare: false, 
     suggestedTime: 0,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Step 1: read the key phrase and sample sentence out loud',
-    instructions2: 'Step 2: ask your learner what he/she thinks the word means',
-    instructions3: 'Step 3: recap the meaning in your own words',
-    instructions4: 'eg. “The Key Phrase for today is [ Key Phrase ]...in a Sample Sentence [ Sample Sentence ]...Based on the sentence, what do you think the phrase means?...[ recap meaning ]”',
+    instructions1: ['I.', {word:'Read', underline: true}, 'Key Phrase', {word:'and', underline: true}, 'Sample Sentence out loud'],
+    instructions2: ['II.', {word:'Ask your learner', underline: true}, 'what he / she thinks the Phrase means'],
+    instructions3: ['III.', {word:'Recap', underline: true}, 'the Phrase\'s meaning in your own words'],
+    instructions4: [{word:'"Ok, the Key Phrase for today is [', color:'#6aa84f'}, {word: 'read', color:'#6aa84f', underline: true, italics: true}, {word: 'Key Phrase', color:'#6aa84f', italics: true}, {word:'].', color:'#6aa84f'}],
+    instructions5: [{word:'Used in a sentence [', color:'#6aa84f'}, {word: 'read', color:'#6aa84f', underline: true, italics: true}, {word: 'Sample Sentence', color:'#6aa84f', italics: true}, {word:'].', color:'#6aa84f'}],
+    instructions6: [{word:'Can you try to', color:'#6aa84f'}, {word:'explain', color:'#6aa84f', underline: true}, {word: 'what the phrase means?...[', color:'#6aa84f'}, {word: 'recap', color:'#6aa84f', underline: true, italics: true}, {word: 'meaning', color:'#6aa84f', italics: true}, {word:']"', color:'#6aa84f'}],
     subjectMatter: 'Key Phrase',
     screenShare: true, 
     suggestedTime: 2,
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'Screen Share OFF',
-    instructions2: 'Use SG’s pre-set questions to guide your discussion',
-    instructions3: 'eg. “Interesting, so what you’re saying is [ key takeaway ]...[ follow up commentary ]...[ follow up question ]...[ SG’s pre-set question ] ”',
+    instructions1: [{word: 'Screen Share OFF', color:'orange'}],
+    instructions2: ['I.', {word:'Use pre-set questions', underline: true}, 'to guide your discussion (in order)'],
+    instructions3: ['II.', {word:'Paraphrase', underline: true}, 'your learner\'s key takeaways'],
+    instructions4: ['III.', {word:'Contribute', underline: true}, 'your own opinion / link to U.S. culture'],
+    instructions5: ['IV.', {word:'Dig deeper', underline: true}, 'with follow ups (eg. "Why?")'],
+    instructions6: [{word:'"Interesting, so what you\'re saying is [', color:'#6aa84f'}, {word: 'paraphrase', color:'#6aa84f', underline: true, italics: true}, {word: 'key takeaways', color:'#6aa84f', italics: true}, {word:']...', color:'#6aa84f'}],
+    instructions7: [{word:'[', color: '#6aa84f'}, {word: 'contribute', color:'#6aa84f', underline: true, italics: true}, {word:']...', color: '#6aa84f', noSpace: true}, {word:'[', color: '#6aa84f'}, {word: 'dig deeper', color:'#6aa84f', underline: true, italics: true},{word:']...[', color: '#6aa84f'}, {word: 'use', color:'#e06666', underline: true, italics: true}, {word: 'pre-set question', color:'#e06666', italics: true}, {word:']"', color: '#6aa84f'}],
     subjectMatter: 'Inquiry',
     screenShare: false, 
-    suggestedTime: '5-10',
+    suggestedTime: '5 - 10',
     link: 'https://www.google.com/',
   },
   { 
-    instructions1: 'If 35 minutes has not passed, ask your learner if they have any questions for you ',
-    instructions2: 'End the session with a positive comment about your learner’s performance',
+    instructions1: ['I. If 35 minutes',{word: 'has not', underline: true}, 'passed:'],
+    instructions2: [{word: 'ask', underline: true}, 'your learner if they have any questions for you'],
+    instructions3: [{word: 'and / or', underline: true}, 'fulfill 35 mins with casual conversation'],
+    instructions4: ['II.', {word: 'End with a positive comment', underline: true}, 'about your learner\'s performance'],
     subjectMatter: 'Closing the Session',
     screenShare: false, 
-    suggestedTime: 1,
+    suggestedTime: 'through 35',
     link: 'https://www.google.com/',
   },
 ];
@@ -237,6 +270,7 @@ function inLesson() {
   document.getElementById('demo-menu').style.display = 'block';
   document.getElementById('sg-category').style.display = 'block';
   //display screenshare and suggested time
+  document.getElementById('sg-topLeft').style.display = 'flex';
   document.getElementById('sg-screenShare').style.display = 'flex';
   document.getElementById('sg-suggestedTime').style.display = 'flex';
   document.getElementById('sg-documentation').href = inLessonDetails[i].link;
@@ -276,7 +310,7 @@ function addDynamicText(inputArray) {
       }
       if (element.color) node.style.color = element.color;
       myText.appendChild(node);
-      myText.append(" ");
+      if (!element.noSpace) myText.append(" ");
     } else {
       let textNode = document.createTextNode(element);
       myText.appendChild(textNode);
@@ -295,7 +329,6 @@ function setInstructions(details, index) {
     } else document.getElementById('sg-instructions1').textContent = details[index].instructions1;
   } else document.getElementById('sg-instructions1').style.display = 'none';
   if (details[index].instructions2) {
-    console.log('hello')
     let instruction2 = document.getElementById('sg-instructions2');
     instruction2.style.display = 'flex';
     if (Array.isArray(details[index].instructions2)) {
@@ -319,18 +352,54 @@ function setInstructions(details, index) {
       instruction4.appendChild(addDynamicText(details[index].instructions4));
     } else document.getElementById('sg-instructions4').textContent = details[index].instructions4;
   } else document.getElementById('sg-instructions4').style.display = 'none';
+  
+  if (details[index].instructions5) {
+    let instruction5 = document.getElementById('sg-instructions5');
+    instruction5.style.display = 'flex';
+    if (Array.isArray(details[index].instructions5)) {
+      if (instruction5.hasChildNodes()) instruction5.removeChild(instruction5.firstChild);
+      instruction5.appendChild(addDynamicText(details[index].instructions5));
+    } else document.getElementById('sg-instructions5').textContent = details[index].instructions5;
+  } else document.getElementById('sg-instructions5').style.display = 'none';
 
-  if (details[index].subjectMatter) document.getElementById('sg-category').textContent = details[index].subjectMatter;
+  if (details[index].instructions6) {
+    let instruction6 = document.getElementById('sg-instructions6');
+    instruction6.style.display = 'flex';
+    if (Array.isArray(details[index].instructions6)) {
+      if (instruction6.hasChildNodes()) instruction6.removeChild(instruction6.firstChild);
+      instruction6.appendChild(addDynamicText(details[index].instructions6));
+    } else document.getElementById('sg-instructions6').textContent = details[index].instructions6;
+  } else document.getElementById('sg-instructions6').style.display = 'none';
+
+  if (details[index].instructions7) {
+    let instruction7 = document.getElementById('sg-instructions7');
+    instruction7.style.display = 'flex';
+    if (Array.isArray(details[index].instructions7)) {
+      if (instruction7.hasChildNodes()) instruction7.removeChild(instruction7.firstChild);
+      instruction7.appendChild(addDynamicText(details[index].instructions7));
+    } else document.getElementById('sg-instructions7').textContent = details[index].instructions7;
+  } else document.getElementById('sg-instructions7').style.display = 'none';
+
+  
+  if (details[index].subjectMatter) {
+    document.getElementById('sg-category').textContent = details[index].subjectMatter;
+    if (details[index].subjectMatter === 'Friendly Reminders') document.getElementById('sg-category').style.color = '#e06666'
+    else document.getElementById('sg-category').style.color = '#598be9'
+  }
 }
 
 function setScreenShare(details, index) {
-    if (details[index].screenShare) {
+  if (details[index].subjectMatter === 'Lead-In') {
+    document.getElementById('sg-screenShareText').textContent = 'ON / OFF';
+    document.getElementById('sg-screenShareText').style.color = '#9ea0a6';
+  }
+  else if (details[index].screenShare) {
     document.getElementById('sg-screenShareText').textContent = 'ON';
     document.getElementById('sg-screenShareText').style.color = '#5d99f8';
   }
   else {
     document.getElementById('sg-screenShareText').textContent = 'OFF';
-    document.getElementById('sg-screenShareText').style.color = 'red';
+    document.getElementById('sg-screenShareText').style.color = '#e08282';
   }
 }
 
@@ -372,7 +441,16 @@ function preLesson() {
 function leftButtonHandler(details, index) {
   if (index > 0) {
     if (index === details.length - 1 && preLessonBool) document.getElementById('sg-documentation').style.display = 'flex';
+    if (preLessonBool) document.getElementById('sg-topLeft').style.display = 'none';
+    else document.getElementById('sg-topLeft').style.display = 'flex';
     index -= 1;
+    if (!preLessonBool && (details[index].subjectMatter === 'Section Transition' || details[index].subjectMatter === 'Friendly Reminders')) {
+      document.getElementById('sg-suggestedTime').style.display = 'none';
+      document.getElementById('sg-screenShare').style.display = 'none';
+    } else {
+      document.getElementById('sg-suggestedTime').style.display = 'flex';
+      document.getElementById('sg-screenShare').style.display = 'flex';
+    }
     if (!preLessonBool) document.getElementById('sg-category').textContent = details[index].subjectMatter;
     document.getElementById('sg-documentation').href = details[index].link;
     document.getElementById('sg-suggestedTimeText').textContent = details[index].suggestedTime + ' min';
@@ -387,7 +465,16 @@ function leftButtonHandler(details, index) {
 
 function rightButtonHandler(details, index) {
   if (index < details.length - 1) {
+    if (preLessonBool) document.getElementById('sg-topLeft').style.display = 'none';
+    else document.getElementById('sg-topLeft').style.display = 'flex';
     index += 1;
+    if (!preLessonBool && (details[index].subjectMatter === 'Section Transition' || details[index].subjectMatter === 'Friendly Reminders')) {
+      document.getElementById('sg-suggestedTime').style.display = 'none';
+      document.getElementById('sg-screenShare').style.display = 'none';
+    } else {
+      document.getElementById('sg-suggestedTime').style.display = 'flex';
+      document.getElementById('sg-screenShare').style.display = 'flex';
+    }
     if (!preLessonBool) document.getElementById('sg-category').textContent = details[index].subjectMatter;
     if (index === details.length - 1 && preLessonBool) document.getElementById('sg-documentation').style.display = 'none';
     document.getElementById('sg-documentation').href = details[index].link;
