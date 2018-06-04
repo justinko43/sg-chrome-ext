@@ -3,8 +3,6 @@ body {
   font-family: 'Nunito Sans', sans-serif;
   color: #9ea0a6;
   margin: 0px;
-  /* border-radius: 7px; */
-  /* box-shadow: 0px 0px 7px #7D7E7F;   */
 }
 
 .watermark {
@@ -21,7 +19,6 @@ body {
 
 #speakgenius-modal {
   background-color: white;
-  /* padding-left: 2.5vw; */
   width: 100vw;
   height: 100vh;
   max-height: 190px;
@@ -67,7 +64,6 @@ body {
 .sg-topLeft {
   padding-top: 10px;
   padding-left:15px;
-  /* min-width: 180px; */
   display: flex;
   width: 25%;
   justify-content: flex-start;
@@ -94,7 +90,6 @@ body {
 #right {
   --mdc-theme-primary: #BBBDC1;
   color: #BBBDC1 !important; 
-  /* color: #90b0ec !important; */
 }
 
 #left {
@@ -104,7 +99,6 @@ body {
 }
 
 #menu-button {
-  /* padding-top: 3px; */
   color: #BBBDC1 !important;
   cursor: pointer;
 }
@@ -116,7 +110,6 @@ body {
   justify-content: flex-end;
   align-items: center;
   width: 25%;
-  /* min-width: 180px; */
 }
 
 .icon {
@@ -153,7 +146,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* margin-bottom: 5px; */
 }
 
 .sg-prePost {
@@ -185,14 +177,10 @@ body {
 
 #sg-suggestedTimeText {
   padding-left: 8px;
-  /* vertical-align: middle;
-   */
 }
 
 #sg-screenShareText {
   padding-left: 8px;
-  /* vertical-align: middle;
-   */
 }
 
 .sg-instruction {
@@ -233,20 +221,26 @@ p {
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
 }
 .sg-closeWrapper {
-  /* float: right; */
   height: 30px;
   line-height: 30px;
   cursor: pointer;
+  font-size: 16px;
   margin-left: 44px;
 }
 
 .sg-help {
-  font-size: 16px;
+  font-size: 14px;
   padding-top: 5px;
   display: flex;
+  color: #e06666;
+  align-items: center;
   margin-left: 35%;
-  height: 30px;
+  height: 25px;
   line-height: 30px;
+}
+
+.test2 {
+  margin-top: 3px;
 }
 
 #sg-troubleshootMenu {
@@ -284,7 +278,6 @@ p {
 }
 
 .docs {
-  /* padding-left: 10px; */
   margin-top: -130px;
   padding-bottom: 5px;
   justify-content: center;
@@ -293,9 +286,11 @@ p {
   width: 100%;
   font-size: 12px;
 }
+
 #sg-documentation {
   color: #598be9;
 }
+
 #sg-documentation:active {
   color: #598be9;
 }
@@ -314,4 +309,9 @@ p {
   justify-content: flex-end;
   padding-right: 15px;
   margin-top: -60px;
+}
+
+.sg-menu-tag {
+  text-decoration: none !important;
+  color: #696969;
 }
