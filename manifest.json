@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "Speak-Genius Chrome EXT",
-  "version": "0.111",
+  "name": "SG Moderator Tool",
+  "version": "0.112",
   "background": {
     "scripts": ["./background.js"],
     "persist": true
