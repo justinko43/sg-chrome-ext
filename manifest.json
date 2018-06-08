@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "SG Moderator Tool",
-  "version": "0.112",
+  "version": "0.113",
   "background": {
     "scripts": ["./background.js"],
     "persist": true
@@ -9,7 +9,7 @@
   "content_scripts": [
     {
       "matches": [
-        "<all_urls>"
+        "*://docs.google.com/*"
       ],
       "js": ["./content.js"],
       "css" : ["./content.css"]
